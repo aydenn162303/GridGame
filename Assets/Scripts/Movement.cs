@@ -38,6 +38,7 @@ public class Movement : MonoBehaviour
             }
 
             waittime = 0.2f;
+
             transform.position += new Vector3(Mathf.Round(horizontalMovement), Mathf.Round(VerticalMovement), 0);
         }
 
