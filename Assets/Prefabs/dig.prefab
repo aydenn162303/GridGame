@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 1647481921833259801}
   - component: {fileID: 3985729549241808433}
   - component: {fileID: 2812698726830170059}
-  m_Layer: 0
+  - component: {fileID: 1693957570136331885}
+  m_Layer: 2
   m_Name: dig
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -143,3 +144,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 707d1824009df0f40b2f5899ff9edf9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minigameStarterPrefab: {fileID: 447986734311320459, guid: faf30cf5b45964b358651235ff1ebfd0, type: 3}
+--- !u!50 &1693957570136331885
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6788354804952981031}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

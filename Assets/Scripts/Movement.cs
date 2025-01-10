@@ -8,14 +8,17 @@ public class Movement : MonoBehaviour
     private float horizontalMovement;
     private float VerticalMovement;
     private float waittime = 0.7f;
+    public bool activeMiniGame = false;
 
 
     void Update() 
     {
         waittime -= Time.deltaTime;
-
-        horizontalMovement = Input.GetAxis("Horizontal");
-        VerticalMovement = Input.GetAxis("Vertical");
+        if (activeMiniGame == false)
+        {
+            horizontalMovement = Input.GetAxis("Horizontal");
+            VerticalMovement = Input.GetAxis("Vertical");
+        }
 
         if (waittime <= 0 && (horizontalMovement != 0 || VerticalMovement != 0))
         {
