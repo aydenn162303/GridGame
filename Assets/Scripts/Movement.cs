@@ -8,17 +8,26 @@ public class Movement : MonoBehaviour
     private float horizontalMovement;
     private float VerticalMovement;
     private float waittime = 0.7f;
-    public bool activeMiniGame = false;
+    private bool activeMiniGameVar = false;
 
 
+    public void activeMiniGame()
+    {
+        activeMiniGameVar = true;
+    }
+    
+    public void deactiveMiniGame()
+    {
+        activeMiniGameVar = false;
+    }
     void Update() 
     {
         waittime -= Time.deltaTime;
-        if (activeMiniGame == false)
+        if (activeMiniGameVar == false)
         {
             horizontalMovement = Input.GetAxis("Horizontal");
             VerticalMovement = Input.GetAxis("Vertical");
-        }
+        
 
         if (waittime <= 0 && (horizontalMovement != 0 || VerticalMovement != 0))
         {
@@ -43,6 +52,8 @@ public class Movement : MonoBehaviour
             waittime = 0.2f;
 
             transform.position += new Vector3(Mathf.Round(horizontalMovement), Mathf.Round(VerticalMovement), 0);
+        }
+
         }
 
             

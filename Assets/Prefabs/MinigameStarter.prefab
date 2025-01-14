@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4087018399349210130}
+  - component: {fileID: 5713527346530067720}
   m_Layer: 0
   m_Name: MinigameStarter
   m_TagString: Untagged
@@ -31,3 +32,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5713527346530067720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 447986734311320459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53dfcbfefff53432792a3afc67c81abf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 5863728792691737445, guid: 245e8b55c31d8483a9cbda0e11007573, type: 3}
+  right1Prefab: {fileID: 6118538542807391618, guid: d350b5750a81f4264ab0325237b90fe1, type: 3}
+  right2Prefab: {fileID: 8918565055361939293, guid: 13cfda2b5b1b64da7abc29065f488ae5, type: 3}
+  right3Prefab: {fileID: 8918565055361939293, guid: 235ed336b63254ceb87bf33d3d8d8352, type: 3}
+  left1Prefab: {fileID: 5135702159131202751, guid: 7abb619c0019a45bba4cf713546ab553, type: 3}
+  left2Prefab: {fileID: 4337969331745531402, guid: 6e4962b59c4764e2399d9d6b81257411, type: 3}
+  left3Prefab: {fileID: 4337969331745531402, guid: 49cb5c30c1bd74f48b25bae730236395, type: 3}
