@@ -33751,10 +33751,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77866751868d44ef187b5090f2221332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Money: 0
+  MoneyVar: 4
   EquiptedPickAxeLuckMult: 1
   EquiptedPickAxeSpeedMult: 1
   EquiptedPickAxeName: Hands
+  Money: {fileID: 545973702}
+  rarityText: {fileID: 574997683}
+  itemValueText: {fileID: 1915682931}
+  itemImage: {fileID: 138729915}
 --- !u!1001 &400142066
 PrefabInstance:
   m_ObjectHideFlags: 0
