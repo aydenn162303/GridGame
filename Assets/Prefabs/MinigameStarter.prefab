@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5713527346530067720}
   m_Layer: 0
   m_Name: MinigameStarter
-  m_TagString: Untagged
+  m_TagString: DigMiniGame
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45,9 +45,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 5863728792691737445, guid: 245e8b55c31d8483a9cbda0e11007573, type: 3}
+  gameManager: {fileID: 0}
   right1Prefab: {fileID: 6118538542807391618, guid: d350b5750a81f4264ab0325237b90fe1, type: 3}
   right2Prefab: {fileID: 8918565055361939293, guid: 13cfda2b5b1b64da7abc29065f488ae5, type: 3}
   right3Prefab: {fileID: 8918565055361939293, guid: 235ed336b63254ceb87bf33d3d8d8352, type: 3}
   left1Prefab: {fileID: 5135702159131202751, guid: 7abb619c0019a45bba4cf713546ab553, type: 3}
   left2Prefab: {fileID: 4337969331745531402, guid: 6e4962b59c4764e2399d9d6b81257411, type: 3}
   left3Prefab: {fileID: 4337969331745531402, guid: 49cb5c30c1bd74f48b25bae730236395, type: 3}
+  randomizeItemPrefab: {fileID: 1284567585670438713, guid: e56b37fafa93f4f4f93f1b55e5892f4e, type: 3}
+  randomTime: 0.3
+  left1: {fileID: 0}
+  left2: {fileID: 0}
+  left3: {fileID: 0}
+  right1: {fileID: 0}
+  right2: {fileID: 0}
+  right3: {fileID: 0}

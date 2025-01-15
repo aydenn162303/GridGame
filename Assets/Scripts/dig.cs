@@ -8,25 +8,16 @@ public class NewBehaviourScript : MonoBehaviour
     private int amountDug = 0;
     private int layer = 1;
 
-    private float digCoolDown = 0;
-
     public GameObject minigameStarterPrefab;
-
-
+    private bool readyToDig = true;
     private bool playerInTrigger = false;
     
     void Update()
     {
-        if (digCoolDown > 0)
-        {
-            digCoolDown -= Time.deltaTime;
-        }
-        
-        if (playerInTrigger && Input.GetMouseButtonDown(0) && digCoolDown <= 0)
+        if (playerInTrigger && Input.GetMouseButtonDown(0) && readyToDig)
         {
             Debug.Log("Dug");
             StartMinigame();
-            digCoolDown = 35.0f;
             amountDug += 1;
         }
     }
@@ -44,6 +35,7 @@ public class NewBehaviourScript : MonoBehaviour
         if (other.tag == "Player")
         {
             playerInTrigger = false;
+            readyToDig = true;
         }
     }
 

@@ -5,13 +5,16 @@ using UnityEngine;
 public class LScript : MonoBehaviour
 {
     public GameObject player;
+    public GameObject MinigameStarter;
     public float speed = 0.3f; // Assuming digminigame.speed is 1.0f, you can set it accordingly
     private bool isMoving = true;
 
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        MinigameStarter = GameObject.FindGameObjectWithTag("DigMiniGame");
         StartCoroutine(ChangePosition());
+        speed = MinigameStarter.GetComponent<digMiniGame>().randomTime;
     }
 
     IEnumerator ChangePosition()
