@@ -46,7 +46,7 @@ public class RandomItemScript : MonoBehaviour
         highestRarity = 0; // Reset highest rarity before rolling
         for (int i = 0; i < rolls; i++)
         {  
-            yield return new WaitForSeconds(Random.Range(0.01f, 0.09f));
+            yield return new WaitForSeconds(Random.Range(0.01f, 0.03f));
             Random.InitState(System.DateTime.Now.Millisecond);
             itemDug = Random.Range(0, 1001);
             currentRarity = 0;
@@ -81,7 +81,7 @@ public class RandomItemScript : MonoBehaviour
                 highestRarity = currentRarity;
             }
 
-            yield return new WaitForSeconds(Random.Range(0.01f, 0.09f));
+            yield return new WaitForSeconds(Random.Range(0.01f, 0.03f));
         }
 
         // Call the function based on the highest rarity rolled
@@ -137,4 +137,6 @@ public class RandomItemScript : MonoBehaviour
     {
         print("Very Very Insanely Rare Item Generated");
     }
+
+
 }
