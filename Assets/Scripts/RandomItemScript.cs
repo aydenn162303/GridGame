@@ -89,28 +89,78 @@ public class RandomItemScript : MonoBehaviour
         {
             case 0:
                 GenerateCommonItem();
+                GameManager.GetComponent<GameManager>().HideDiggingText();
                 break;
             case 1:
                 GenerateUncommonItem();
+                GameManager.GetComponent<GameManager>().HideDiggingText();
                 break;
             case 2:
                 GenerateRareItem();
+                GameManager.GetComponent<GameManager>().HideDiggingText();
                 break;
             case 3:
                 GenerateVeryRareItem();
+                GameManager.GetComponent<GameManager>().HideDiggingText();
                 break;
             case 4:
                 GenerateInsanelyRareItem();
+                GameManager.GetComponent<GameManager>().HideDiggingText();
                 break;
             case 5:
                 GenerateVeryVeryInsanelyRareItem();
+                GameManager.GetComponent<GameManager>().HideDiggingText();
                 break;
         }
     }
 
     void GenerateCommonItem()
     {
-        print("Common Item Generated");
+        itemDug = Random.Range(1, 11);
+
+        switch(itemDug)
+        {
+            case 1:
+                print("Common Item 1 Generated");
+                GameManager.GetComponent<GameManager>().ChangeSellValue(15f, "Common");
+                break;
+            case 2:
+                print("Common Item 2 Generated");
+                GameManager.GetComponent<GameManager>().ChangeSellValue(10f, "Common");
+                break;
+            case 3:
+                print("Common Item 3 Generated");
+                GameManager.GetComponent<GameManager>().ChangeSellValue(12f, "Common");
+                break;
+            case 4:
+                print("Common Item 4 Generated");
+                GameManager.GetComponent<GameManager>().ChangeSellValue(8f, "Common");
+                break;
+            case 5:
+                print("Common Item 5 Generated");
+                GameManager.GetComponent<GameManager>().ChangeSellValue(14f, "Common");
+                break;
+            case 6:
+                print("Common Item 6 Generated");
+                GameManager.GetComponent<GameManager>().ChangeSellValue(9f, "Common");
+                break;
+            case 7:
+                print("Common Item 7 Generated");
+                GameManager.GetComponent<GameManager>().ChangeSellValue(11f, "Common");
+                break;
+            case 8:
+                print("Common Item 8 Generated");
+                GameManager.GetComponent<GameManager>().ChangeSellValue(13f, "Common");
+                break;
+            case 9:
+                print("Common Item 9 Generated");
+                GameManager.GetComponent<GameManager>().ChangeSellValue(7f, "Common");
+                break;
+            case 10:
+                print("Common Item 10 Generated");
+                GameManager.GetComponent<GameManager>().ChangeSellValue(6f, "Common");
+                break;
+        }
     }
 
     void GenerateUncommonItem()

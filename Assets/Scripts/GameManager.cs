@@ -25,11 +25,6 @@ public class GameManager : MonoBehaviour
         HideUIElements();
     }
 
-    void Update()
-    {
-        UpdateMoneyText();
-    }
-
     void UpdateMoneyText()
     {
         Money.text = "Money: $" + MoneyVar.ToString("F2");
@@ -41,6 +36,23 @@ public class GameManager : MonoBehaviour
         itemValueText.gameObject.SetActive(false);
         itemImage.gameObject.SetActive(false);
         diggingText.gameObject.SetActive(false);
+    }
+
+    void Update()
+    {
+        UpdateMoneyText();
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            HideNewItem();
+        }
+    }
+
+    void HideNewItem()
+    {
+        rarityText.gameObject.SetActive(false);
+        itemValueText.gameObject.SetActive(false);
+        itemImage.gameObject.SetActive(false);
     }
 
     public void ShowNewItem()
@@ -58,5 +70,45 @@ public class GameManager : MonoBehaviour
     public void HideDiggingText()
     {
         diggingText.gameObject.SetActive(false);
+    }
+
+    public void ChangeSellValue(float value, string rarity)
+    {
+        SellValue += value;
+        Debug.Log("Value: $" + SellValue.ToString("F2"));
+
+        ShowNewItem();
+
+        itemValueText.text = "Value: $" + value.ToString("F2");
+
+        if (rarity == "Common")
+        {
+            rarityText.text = "common item";
+        }
+        else if (rarity == "Uncommon")
+        {
+            rarityText.text = "uncommon item";
+        }
+        else if (rarity == "Rare")
+        {
+            rarityText.text = "rare item";
+        }
+        else if (rarity == "Very Rare")
+        {
+            rarityText.text = "very rare item";
+        }
+        else if (rarity == "Insanely Rare")
+        {
+            rarityText.text = "insanely rare item";
+        }
+        else if (rarity == "Very Very Insanely Rare")
+        {
+            rarityText.text = "very very insanely rare item";
+        }
+        else
+        {
+            rarityText.text = "unknown?? this shouldn't happen";
+        }
+
     }
 }
