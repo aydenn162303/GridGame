@@ -165,12 +165,100 @@ public class RandomItemScript : MonoBehaviour
 
     void GenerateUncommonItem()
     {
-        print("Uncommon Item Generated");
+        itemDug = Random.Range(1, 11);
+
+        switch(itemDug)
+        {
+            case 1:
+                print("Uncommon Item 1 Generated");
+                GameManager.GetComponent<GameManager>().ChangeSellValue(30f, "Uncommon");
+                break;
+            case 2:
+                print("Uncommon Item 2 Generated");
+                GameManager.GetComponent<GameManager>().ChangeSellValue(20f, "Uncommon");
+                break;
+            case 3:
+                print("Uncommon Item 3 Generated");
+                GameManager.GetComponent<GameManager>().ChangeSellValue(24f, "Uncommon");
+                break;
+            case 4:
+                print("Uncommon Item 4 Generated");
+                GameManager.GetComponent<GameManager>().ChangeSellValue(16f, "Uncommon");
+                break;
+            case 5:
+                print("Uncommon Item 5 Generated");
+                GameManager.GetComponent<GameManager>().ChangeSellValue(28f, "Uncommon");
+                break;
+            case 6:
+                print("Uncommon Item 6 Generated");
+                GameManager.GetComponent<GameManager>().ChangeSellValue(18f, "Uncommon");
+                break;
+            case 7:
+                print("Uncommon Item 7 Generated");
+                GameManager.GetComponent<GameManager>().ChangeSellValue(22f, "Uncommon");
+                break;
+            case 8:
+                print("Uncommon Item 8 Generated");
+                GameManager.GetComponent<GameManager>().ChangeSellValue(26f, "Uncommon");
+                break;
+            case 9:
+                print("Uncommon Item 9 Generated");
+                GameManager.GetComponent<GameManager>().ChangeSellValue(14f, "Uncommon");
+                break;
+            case 10:
+                print("Uncommon Item 10 Generated");
+                GameManager.GetComponent<GameManager>().ChangeSellValue(12f, "Uncommon");
+                break;
+        }
     }
 
     void GenerateRareItem()
     {
-        print("Rare Item Generated");
+        itemDug = Random.Range(1, 11);
+
+        switch(itemDug)
+        {
+            case 1:
+                print("Rare Item 1 Generated");
+                GameManager.GetComponent<GameManager>().ChangeSellValue(90f, "Rare");
+                break;
+            case 2:
+                print("Rare Item 2 Generated");
+                GameManager.GetComponent<GameManager>().ChangeSellValue(70f, "Rare");
+                break;
+            case 3:
+                print("Rare Item 3 Generated");
+                GameManager.GetComponent<GameManager>().ChangeSellValue(84f, "Rare");
+                break;
+            case 4:
+                print("Rare Item 4 Generated");
+                GameManager.GetComponent<GameManager>().ChangeSellValue(56f, "Rare");
+                break;
+            case 5:
+                print("Rare Item 5 Generated");
+                GameManager.GetComponent<GameManager>().ChangeSellValue(112f, "Rare");
+                break;
+            case 6:
+                print("Rare Item 6 Generated");
+                GameManager.GetComponent<GameManager>().ChangeSellValue(72f, "Rare");
+                break;
+            case 7:
+                print("Rare Item 7 Generated");
+                GameManager.GetComponent<GameManager>().ChangeSellValue(88f, "Rare");
+                break;
+            case 8:
+                print("Rare Item 8 Generated");
+                GameManager.GetComponent<GameManager>().ChangeSellValue(104f, "Rare");
+                break;
+            case 9:
+                print("Rare Item 9 Generated");
+                GameManager.GetComponent<GameManager>().ChangeSellValue(56f, "Rare");
+                break;
+            case 10:
+                print("Rare Item 10 Generated");
+                GameManager.GetComponent<GameManager>().ChangeSellValue(48f, "Rare");
+                break;
+        }
     }
 
     void GenerateVeryRareItem()
