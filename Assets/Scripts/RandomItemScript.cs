@@ -38,7 +38,8 @@ public class RandomItemScript : MonoBehaviour
             GameManager.GetComponent<GameManager>().HideDiggingText();
             yield return new WaitForSeconds(0.2f);
         }
-        StartCoroutine(GenerateRandom());
+        yield return StartCoroutine(GenerateRandom());
+        Destroy(gameObject);
     }
 
     IEnumerator GenerateRandom()
@@ -46,32 +47,32 @@ public class RandomItemScript : MonoBehaviour
         highestRarity = 0; // Reset highest rarity before rolling
         for (int i = 0; i < rolls; i++)
         {  
-            yield return new WaitForSeconds(Random.Range(0.01f, 0.03f));
-            Random.InitState(System.DateTime.Now.Millisecond);
+            Random.InitState((int)GameManager.GetComponent<GameManager>().constantRandomSeed);
+            print("Random Seed: " + GameManager.GetComponent<GameManager>().constantRandomSeed);
             itemDug = Random.Range(0, 1001);
             currentRarity = 0;
 
-            if (itemDug <= 500 && itemDug > 0)
+            if (itemDug <= 700 && itemDug > 0) // 70% chance for common items
             {
                 currentRarity = 0;
             }
-            else if (itemDug >= 501 && itemDug <= 700)
+            else if (itemDug >= 701 && itemDug <= 900) // 20% chance for uncommon items
             {
                 currentRarity = 1;
             }
-            else if (itemDug >= 701 && itemDug <= 850)
+            else if (itemDug >= 901 && itemDug <= 960) // 6% chance for rare items
             {
                 currentRarity = 2;
             }
-            else if (itemDug >= 851 && itemDug <= 950)
+            else if (itemDug >= 961 && itemDug <= 990) // 3% chance for very rare items
             {
                 currentRarity = 3;
             }
-            else if (itemDug >= 951 && itemDug <= 997)
+            else if (itemDug >= 991 && itemDug <= 999) // 1% chance for insanely rare items
             {
                 currentRarity = 4;
             }
-            else
+            else // 0.1% chance for very very insanely rare items
             {
                 currentRarity = 5;
             }
@@ -214,7 +215,7 @@ public class RandomItemScript : MonoBehaviour
 
     void GenerateRareItem()
     {
-        itemDug = Random.Range(1, 11);
+        itemDug = Random.Range(1, 6);
 
         switch(itemDug)
         {
@@ -238,43 +239,93 @@ public class RandomItemScript : MonoBehaviour
                 print("Rare Item 5 Generated");
                 GameManager.GetComponent<GameManager>().ChangeSellValue(112f, "Rare");
                 break;
-            case 6:
-                print("Rare Item 6 Generated");
-                GameManager.GetComponent<GameManager>().ChangeSellValue(72f, "Rare");
-                break;
-            case 7:
-                print("Rare Item 7 Generated");
-                GameManager.GetComponent<GameManager>().ChangeSellValue(88f, "Rare");
-                break;
-            case 8:
-                print("Rare Item 8 Generated");
-                GameManager.GetComponent<GameManager>().ChangeSellValue(104f, "Rare");
-                break;
-            case 9:
-                print("Rare Item 9 Generated");
-                GameManager.GetComponent<GameManager>().ChangeSellValue(56f, "Rare");
-                break;
-            case 10:
-                print("Rare Item 10 Generated");
-                GameManager.GetComponent<GameManager>().ChangeSellValue(48f, "Rare");
-                break;
         }
     }
 
     void GenerateVeryRareItem()
     {
-        print("Very Rare Item Generated");
+        itemDug = Random.Range(1, 6);
+
+        switch(itemDug)
+        {
+            case 1:
+                print("Very Rare Item 1 Generated");
+                GameManager.GetComponent<GameManager>().ChangeSellValue(200f, "Very Rare");
+                break;
+            case 2:
+                print("Very Rare Item 2 Generated");
+                GameManager.GetComponent<GameManager>().ChangeSellValue(250f, "Very Rare");
+                break;
+            case 3:
+                print("Very Rare Item 3 Generated");
+                GameManager.GetComponent<GameManager>().ChangeSellValue(300f, "Very Rare");
+                break;
+            case 4:
+                print("Very Rare Item 4 Generated");
+                GameManager.GetComponent<GameManager>().ChangeSellValue(350f, "Very Rare");
+                break;
+            case 5:
+                print("Very Rare Item 5 Generated");
+                GameManager.GetComponent<GameManager>().ChangeSellValue(400f, "Very Rare");
+                break;
+        }
     }
 
     void GenerateInsanelyRareItem()
     {
-        print("Insanely Rare Item Generated");
+        itemDug = Random.Range(1, 6);
+
+        switch(itemDug)
+        {
+            case 1:
+                print("Insanely Rare Item 1 Generated");
+                GameManager.GetComponent<GameManager>().ChangeSellValue(450f, "Insanely Rare");
+                break;
+            case 2:
+                print("Insanely Rare Item 2 Generated");
+                GameManager.GetComponent<GameManager>().ChangeSellValue(470f, "Insanely Rare");
+                break;
+            case 3:
+                print("Insanely Rare Item 3 Generated");
+                GameManager.GetComponent<GameManager>().ChangeSellValue(420f, "Insanely Rare");
+                break;
+            case 4:
+                print("Insanely Rare Item 4 Generated");
+                GameManager.GetComponent<GameManager>().ChangeSellValue(480f, "Insanely Rare");
+                break;
+            case 5:
+                print("Insanely Rare Item 5 Generated");
+                GameManager.GetComponent<GameManager>().ChangeSellValue(460f, "Insanely Rare");
+                break;
+        }
     }
 
     void GenerateVeryVeryInsanelyRareItem()
     {
-        print("Very Very Insanely Rare Item Generated");
+        itemDug = Random.Range(1, 6);
+
+        switch(itemDug)
+        {
+            case 1:
+                print("Very Very Insanely Rare Item 1 Generated");
+                GameManager.GetComponent<GameManager>().ChangeSellValue(900f, "Very Very Insanely Rare");
+                break;
+            case 2:
+                print("Very Very Insanely Rare Item 2 Generated");
+                GameManager.GetComponent<GameManager>().ChangeSellValue(870f, "Very Very Insanely Rare");
+                break;
+            case 3:
+                print("Very Very Insanely Rare Item 3 Generated");
+                GameManager.GetComponent<GameManager>().ChangeSellValue(840f, "Very Very Insanely Rare");
+                break;
+            case 4:
+                print("Very Very Insanely Rare Item 4 Generated");
+                GameManager.GetComponent<GameManager>().ChangeSellValue(856f, "Very Very Insanely Rare");
+                break;
+            case 5:
+                print("Very Very Insanely Rare Item 5 Generated");
+                GameManager.GetComponent<GameManager>().ChangeSellValue(812f, "Very Very Insanely Rare");
+                break;
+        }
     }
-
-
 }

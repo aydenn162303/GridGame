@@ -6,17 +6,22 @@ using UnityEngine.UI; // Add this for Image
 
 public class GameManager : MonoBehaviour
 {
+    public GameObject player;
+
     public float MoneyVar = 4f;
     public float SellValue = 0f;
     public int EquiptedPickAxeLuckMult = 1;
+    public float constantRandomSeed = 0f;
     public float EquiptedPickAxeSpeedMult = 1;
     public string EquiptedPickAxeName = "Hands";
 
     public TextMeshProUGUI Money; // Add this field
+    public TextMeshProUGUI TotalSellValue;
     public TextMeshProUGUI rarityText; // Add this field
     public TextMeshProUGUI itemValueText; // Add this field
     public TextMeshProUGUI diggingText; // Add this field
     public Image itemImage; // Add this field
+    
 
 
     void Start()
@@ -28,6 +33,7 @@ public class GameManager : MonoBehaviour
     void UpdateMoneyText()
     {
         Money.text = "Money: $" + MoneyVar.ToString("F2");
+        TotalSellValue.text = "Total Sell Value: $" + SellValue.ToString("F2");
     }
 
     void HideUIElements()
@@ -40,6 +46,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+        constantRandomSeed = System.DateTime.Now.Millisecond;
         UpdateMoneyText();
 
         if (Input.GetKeyDown(KeyCode.Space))
@@ -72,8 +79,18 @@ public class GameManager : MonoBehaviour
         diggingText.gameObject.SetActive(false);
     }
 
+    public void SellItems()
+    {
+        MoneyVar += SellValue;
+        SellValue = 0f;
+        UpdateMoneyText();
+        HideNewItem();
+    }
+
     public void ChangeSellValue(float value, string rarity)
     {
+        //since this happens when item is generated, also allow player movement
+        player.GetComponent<Movement>().deactiveMiniGame();
         SellValue += value;
         Debug.Log("Value: $" + SellValue.ToString("F2"));
 

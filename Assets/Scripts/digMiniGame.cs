@@ -68,8 +68,10 @@ public class digMiniGame : MonoBehaviour
         {
             DugSuccess();
         }
-
-        player.GetComponent<Movement>().deactiveMiniGame();
+        else
+        {
+            DugFail();
+        }
 
         Destroy(left1);
         Destroy(left2);
@@ -84,6 +86,11 @@ public class digMiniGame : MonoBehaviour
     {
         print("You dug yay!!");
         Instantiate(randomizeItemPrefab, new Vector3(0,0,0), Quaternion.identity);
+    }
+
+    void DugFail()
+    {
+        player.GetComponent<Movement>().deactiveMiniGame();
     }
 
 }

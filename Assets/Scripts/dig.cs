@@ -18,6 +18,7 @@ public class NewBehaviourScript : MonoBehaviour
         {
             Debug.Log("Dug");
             StartMinigame();
+            readyToDig = false;
             amountDug += 1;
         }
     }
@@ -36,6 +37,7 @@ public class NewBehaviourScript : MonoBehaviour
         {
             playerInTrigger = false;
             readyToDig = true;
+            Debug.Log("Player left trigger");
         }
     }
 
