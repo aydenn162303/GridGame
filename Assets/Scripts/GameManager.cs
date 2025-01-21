@@ -20,7 +20,9 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI rarityText; // Add this field
     public TextMeshProUGUI itemValueText; // Add this field
     public TextMeshProUGUI diggingText; // Add this field
+    public Button sellItemsButton; // Add this field
     public Image itemImage; // Add this field
+    public Image pressSpaceImage;
     
 
 
@@ -42,6 +44,9 @@ public class GameManager : MonoBehaviour
         itemValueText.gameObject.SetActive(false);
         itemImage.gameObject.SetActive(false);
         diggingText.gameObject.SetActive(false);
+        sellItemsButton.gameObject.SetActive(false);
+        TotalSellValue.gameObject.SetActive(false);
+        pressSpaceImage.gameObject.SetActive(false);
     }
 
     void Update()
@@ -60,6 +65,7 @@ public class GameManager : MonoBehaviour
         rarityText.gameObject.SetActive(false);
         itemValueText.gameObject.SetActive(false);
         itemImage.gameObject.SetActive(false);
+        pressSpaceImage.gameObject.SetActive(false);
     }
 
     public void ShowNewItem()
@@ -67,6 +73,7 @@ public class GameManager : MonoBehaviour
         rarityText.gameObject.SetActive(true);
         itemValueText.gameObject.SetActive(true);
         itemImage.gameObject.SetActive(true);
+        pressSpaceImage.gameObject.SetActive(true);
     }
 
     public void ShowDiggingText()
@@ -127,5 +134,17 @@ public class GameManager : MonoBehaviour
             rarityText.text = "unknown?? this shouldn't happen";
         }
 
+    }
+
+    public void playerHasEntered()
+    {
+        sellItemsButton.gameObject.SetActive(true);
+        TotalSellValue.gameObject.SetActive(true);
+    }
+
+    public void playerHasExited()
+    {
+        sellItemsButton.gameObject.SetActive(false);
+        TotalSellValue.gameObject.SetActive(false);
     }
 }
